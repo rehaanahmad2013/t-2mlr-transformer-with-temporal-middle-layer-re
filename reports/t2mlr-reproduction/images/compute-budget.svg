@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Reserved GPU-hour budget by experiment attempt</title>
+  <desc id="desc">Six Kubernetes runs reserved a total of 192 GPU-hours: 48, 48, 40, 40, 8, and 8. The first pair failed in the manifest, the second in distributed startup, and the final pair during data preparation.</desc>
+  <rect width="1200" height="520" rx="28" fill="#071a16"/>
+  <text x="60" y="66" fill="#ecfdf5" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">The hard budget was fully reserved before science began</text>
+  <text x="60" y="102" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="18">Conservative accounting charges requested GPUs × requested wall time, including failed jobs.</text>
+  <rect x="60" y="148" width="270" height="96" fill="#ef4444"/>
+  <rect x="330" y="148" width="270" height="96" fill="#dc2626"/>
+  <rect x="600" y="148" width="225" height="96" fill="#f59e0b"/>
+  <rect x="825" y="148" width="225" height="96" fill="#d97706"/>
+  <rect x="1050" y="148" width="45" height="96" fill="#3b82f6"/>
+  <rect x="1095" y="148" width="45" height="96" fill="#2563eb"/>
+  <text x="165" y="190" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">48</text>
+  <text x="435" y="190" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">48</text>
+  <text x="688" y="190" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">40</text>
+  <text x="913" y="190" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">40</text>
+  <text x="1063" y="190" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">8</text>
+  <text x="1108" y="190" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">8</text>
+  <text x="60" y="276" fill="#d1fae5" font-family="Inter,Arial,sans-serif" font-size="17">0</text>
+  <text x="1140" y="276" text-anchor="end" fill="#d1fae5" font-family="Inter,Arial,sans-serif" font-size="17">192 GPU-hours</text>
+  <rect x="60" y="316" width="320" height="128" rx="18" fill="#331313" stroke="#ef4444"/>
+  <text x="86" y="352" fill="#fca5a5" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">96 GPU-HOURS</text>
+  <text x="86" y="386" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="700">Manifest shell parsing</text>
+  <text x="86" y="416" fill="#fecaca" font-family="Inter,Arial,sans-serif" font-size="16">2 runs · 8 GPUs × 6h</text>
+  <rect x="440" y="316" width="320" height="128" rx="18" fill="#3b260b" stroke="#f59e0b"/>
+  <text x="466" y="352" fill="#fcd34d" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">80 GPU-HOURS</text>
+  <text x="466" y="386" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="700">Lazy NCCL startup</text>
+  <text x="466" y="416" fill="#fde68a" font-family="Inter,Arial,sans-serif" font-size="16">2 runs · 8 GPUs × 5h</text>
+  <rect x="820" y="316" width="320" height="128" rx="18" fill="#102a4c" stroke="#3b82f6"/>
+  <text x="846" y="352" fill="#93c5fd" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">16 GPU-HOURS</text>
+  <text x="846" y="386" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="700">Dataset construction</text>
+  <text x="846" y="416" fill="#bfdbfe" font-family="Inter,Arial,sans-serif" font-size="16">2 runs · 4 GPUs × 2h</text>
+  <text x="60" y="486" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="17">All runs: OpenResearch Kubernetes on NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs.</text>
+</svg>

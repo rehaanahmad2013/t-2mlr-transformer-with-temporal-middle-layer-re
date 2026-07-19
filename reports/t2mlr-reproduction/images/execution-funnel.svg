@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Execution stages reached by the reproduction</title>
+  <desc id="desc">Kubernetes submission and distributed initialization eventually succeeded. Dataset construction ran until the job limit. Model loading, training, evaluation, latency, and memory measurement were not reached.</desc>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+  <rect width="1200" height="500" rx="28" fill="#fff7ed"/>
+  <text x="58" y="64" fill="#431407" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">Where execution stopped</text>
+  <text x="58" y="100" fill="#7c2d12" font-family="Inter,Arial,sans-serif" font-size="18">A scientific verdict requires every stage through paired measurement.</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="58" y="150" width="160" height="106" rx="18" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="82" y="187" fill="#166534" font-size="17" font-weight="700">KUBERNETES</text><text x="82" y="221" fill="#14532d" font-size="22" font-weight="700">Reached</text>
+    <path d="M225 203 H268" stroke="#64748b" stroke-width="4" marker-end="url(#arr)"/>
+    <rect x="278" y="150" width="160" height="106" rx="18" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="302" y="187" fill="#166534" font-size="17" font-weight="700">NCCL / DDP</text><text x="302" y="221" fill="#14532d" font-size="22" font-weight="700">Reached</text>
+    <path d="M445 203 H488" stroke="#64748b" stroke-width="4" marker-end="url(#arr)"/>
+    <rect x="498" y="150" width="190" height="106" rx="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+    <text x="522" y="187" fill="#92400e" font-size="17" font-weight="700">DATA FILTERING</text><text x="522" y="221" fill="#78350f" font-size="22" font-weight="700">Stopped here</text>
+    <path d="M695 203 H738" stroke="#94a3b8" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#arr)"/>
+    <rect x="748" y="150" width="160" height="106" rx="18" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="772" y="187" fill="#64748b" font-size="17" font-weight="700">MODEL + SFT</text><text x="772" y="221" fill="#475569" font-size="21" font-weight="700">Not reached</text>
+    <path d="M915 203 H958" stroke="#94a3b8" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#arr)"/>
+    <rect x="968" y="150" width="174" height="106" rx="18" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="992" y="187" fill="#64748b" font-size="17" font-weight="700">EVAL + PROFILE</text><text x="992" y="221" fill="#475569" font-size="21" font-weight="700">Not reached</text>
+  </g>
+  <rect x="58" y="310" width="1084" height="120" rx="18" fill="#ffedd5" stroke="#fb923c"/>
+  <text x="86" y="350" fill="#9a3412" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">TERMINAL EVIDENCE</text>
+  <text x="86" y="384" fill="#431407" font-family="Inter,Arial,sans-serif" font-size="20">The final logs contain the run contract and a 9,439-token warning from sample tokenization,</text>
+  <text x="86" y="414" fill="#431407" font-family="Inter,Arial,sans-serif" font-size="20">but no model-load, training, evaluation, latency, or memory event.</text>
+  <text x="58" y="470" fill="#7c2d12" font-family="Inter,Arial,sans-serif" font-size="17">Therefore both target claims are “not attempted”; this is not a negative T²MLR result.</text>
+</svg>

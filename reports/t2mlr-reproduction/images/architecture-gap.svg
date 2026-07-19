@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Paper recurrence path and reproducible checkpoint path</title>
+  <desc id="desc">The paper describes a 32-layer SmolLM2 with recurrence from layer 28 to layer 5, while the pinned official checkpoint has 24 layers, so the implementation uses the closest valid path from layer 24 to layer 5.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f97316"/></marker></defs>
+  <rect width="1200" height="560" rx="28" fill="#f8fafc"/>
+  <text x="60" y="64" fill="#0f172a" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">One architectural ambiguity changes the endpoint</text>
+  <text x="60" y="98" fill="#475569" font-family="Inter,Arial,sans-serif" font-size="18">The official pinned model configuration does not match the paper's stated depth.</text>
+  <rect x="60" y="134" width="500" height="304" rx="20" fill="#eef2ff" stroke="#818cf8"/>
+  <text x="88" y="174" fill="#4338ca" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">PAPER DESCRIPTION</text>
+  <text x="88" y="214" fill="#0f172a" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">32 layers · recurrence 28 → 5</text>
+  <rect x="116" y="250" width="376" height="34" rx="8" fill="#c7d2fe"/>
+  <rect x="116" y="310" width="376" height="34" rx="8" fill="#c7d2fe"/>
+  <rect x="116" y="370" width="376" height="34" rx="8" fill="#c7d2fe"/>
+  <text x="132" y="273" fill="#312e81" font-family="Inter,Arial,sans-serif" font-size="17">Layer 28 · recurrent state extracted</text>
+  <text x="132" y="333" fill="#312e81" font-family="Inter,Arial,sans-serif" font-size="17">… middle computation …</text>
+  <text x="132" y="393" fill="#312e81" font-family="Inter,Arial,sans-serif" font-size="17">Layer 5 · recurrent state fused</text>
+  <path d="M465 267 C535 267 535 387 480 387" fill="none" stroke="#f97316" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="640" y="134" width="500" height="304" rx="20" fill="#ecfeff" stroke="#06b6d4"/>
+  <text x="668" y="174" fill="#0e7490" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">PINNED OFFICIAL CHECKPOINT</text>
+  <text x="668" y="214" fill="#0f172a" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">24 layers · implemented 24 → 5</text>
+  <rect x="696" y="250" width="376" height="34" rx="8" fill="#a5f3fc"/>
+  <rect x="696" y="310" width="376" height="34" rx="8" fill="#a5f3fc"/>
+  <rect x="696" y="370" width="376" height="34" rx="8" fill="#a5f3fc"/>
+  <text x="712" y="273" fill="#164e63" font-family="Inter,Arial,sans-serif" font-size="17">Layer 24 · deepest valid endpoint</text>
+  <text x="712" y="333" fill="#164e63" font-family="Inter,Arial,sans-serif" font-size="17">… middle computation …</text>
+  <text x="712" y="393" fill="#164e63" font-family="Inter,Arial,sans-serif" font-size="17">Layer 5 · recurrent state fused</text>
+  <path d="M1045 267 C1115 267 1115 387 1060 387" fill="none" stroke="#f97316" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="60" y="486" fill="#0f172a" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">Fusion preserved:</text>
+  <text x="230" y="486" fill="#334155" font-family="ui-monospace,SFMono-Regular,monospace" font-size="17">h + tanh(γcur)·σ(fcur[h,R])·h + tanh(γrec)·σ(frec[h,R])·WrecR</text>
+  <text x="60" y="522" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="17">This is a documented substitution, not an exact reproduction of the paper's 5↔28 path.</text>
+</svg>

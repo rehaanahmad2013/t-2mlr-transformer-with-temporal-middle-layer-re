@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">T2MLR paper claims and reproduction verdict</title>
+  <desc id="desc">The paper reports gains on GSM8K and MATH500 and low inference overhead. The reproduction produced no scientific measurement because execution stopped during dataset construction.</desc>
+  <rect width="1200" height="520" rx="28" fill="#0b1220"/>
+  <text x="64" y="70" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">The claims remain untested—not contradicted</text>
+  <text x="64" y="108" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="19">Paper evidence at left · reproduced evidence at right</text>
+  <rect x="64" y="146" width="660" height="128" rx="18" fill="#14213d" stroke="#2f4b7c"/>
+  <text x="92" y="184" fill="#93c5fd" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">REASONING QUALITY · PAPER</text>
+  <text x="92" y="226" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">GSM8K 35.78 → 39.88</text>
+  <text x="405" y="226" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">MATH500 12.80 → 18.00</text>
+  <text x="92" y="254" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="17">Matched OpenMathReasoning fine-tune</text>
+  <rect x="752" y="146" width="384" height="128" rx="18" fill="#3a2711" stroke="#f59e0b"/>
+  <text x="780" y="184" fill="#fbbf24" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">REPRODUCTION</text>
+  <text x="780" y="226" fill="#fef3c7" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">NO MEASUREMENT</text>
+  <text x="780" y="254" fill="#fde68a" font-family="Inter,Arial,sans-serif" font-size="17">Verdict: not attempted</text>
+  <rect x="64" y="302" width="660" height="128" rx="18" fill="#14213d" stroke="#2f4b7c"/>
+  <text x="92" y="340" fill="#93c5fd" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">INFERENCE OVERHEAD · PAPER</text>
+  <text x="92" y="384" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">≤ ~8% latency</text>
+  <text x="405" y="384" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">&lt; 0.1% peak memory</text>
+  <text x="92" y="412" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="17">Autoregressive generation</text>
+  <rect x="752" y="302" width="384" height="128" rx="18" fill="#3a2711" stroke="#f59e0b"/>
+  <text x="780" y="340" fill="#fbbf24" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">REPRODUCTION</text>
+  <text x="780" y="384" fill="#fef3c7" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">NO MEASUREMENT</text>
+  <text x="780" y="412" fill="#fde68a" font-family="Inter,Arial,sans-serif" font-size="17">Verdict: not attempted</text>
+  <text x="64" y="482" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="18">Kubernetes · RTX PRO 6000 Blackwell · 192 reserved GPU-hours · stopped before model loading</text>
+</svg>
