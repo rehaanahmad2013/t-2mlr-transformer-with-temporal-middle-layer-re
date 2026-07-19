@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2607.15178",
+  "title": "T²MLR retrofit reproduction",
+  "description": "The reasoning and overhead claims were not reproduced because the paired Kubernetes runs stopped during OpenMathReasoning construction before model loading.",
+  "verdict": "not-reproduced",
+  "reportPath": "reports/t2mlr-reproduction/report.md",
+  "notebookPath": "notebooks/t2mlr_reproduction.py",
+  "compute": {
+    "backend": "kubernetes",
+    "gpuModel": "NVIDIA RTX PRO 6000 Blackwell",
+    "gpuCount": 16,
+    "wallHours": 2.301211
+  }
+}

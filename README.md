@@ -6,7 +6,9 @@ This project tested two claims from [T²MLR: Transformer with Temporal Middle-La
 
 The paper reports **GSM8K 35.78→39.88** and **MATH500 12.80→18.00**; this reproduction has **no accuracy, latency, or memory number**. The official pinned SmolLM2 checkpoint has 24 layers rather than the paper's stated 32, so the closest valid path **24→5** replaced **28→5**. The final bounded protocol kept the full 1.7B model but reduced training to 512 OpenMathReasoning examples, Jacobi depth to 8/1, evaluation to 256 GSM8K and 100 MATH500 examples, and profiling to two repeats at 128/512 tokens.
 
-All runs used **OpenResearch Kubernetes** on **NVIDIA RTX PRO 6000 Blackwell Server Edition** GPUs. Peak concurrency was 16 GPUs; the final pair used 4 GPUs each. The six launches reserved **192 GPU-hours total** and finished within the 12-hour paper wall-clock cap. Read the [illustrated reproduction report](reports/t2mlr-reproduction/report.md) for the implementation, evidence, failure analysis, and exact claim verdicts.
+All runs used **OpenResearch Kubernetes** on **NVIDIA RTX PRO 6000 Blackwell Server Edition** GPUs. Peak concurrency was 16 GPUs; the final pair used 4 GPUs each. The six launches reserved **192 GPU-hours total** and spanned **2.301211 actual wall-hours**, within the 12-hour paper cap.
+
+Publication artifacts: [illustrated detailed report](reports/t2mlr-reproduction/report.md) · [self-contained marimo notebook](notebooks/t2mlr_reproduction.py) · [open the notebook at this exact public Molab URL](https://molab.marimo.io/github/rehaanahmad2013/t-2mlr-transformer-with-temporal-middle-layer-re/blob/main/notebooks/t2mlr_reproduction.py)
 
 ## Experiment log
 

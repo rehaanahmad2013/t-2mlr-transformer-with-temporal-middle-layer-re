@@ -84,7 +84,7 @@ The bounded final jobs printed their full run contracts and then remained in det
 
 ![All 192 reserved GPU-hours, conservatively charged at requested capacity, were consumed by setup and data construction attempts.](images/compute-budget.svg)
 
-The reservation total is intentionally conservative: every failed run is charged at requested GPUs × requested wall time, even when Kubernetes released it early. Peak concurrency was 16 GPUs for the initial pairs and 8 GPUs for the final pair, never exceeding the 16-GPU cluster limit. The entire queue completed well inside the 12-hour paper wall-clock limit.
+The reservation total is intentionally conservative: every failed run is charged at requested GPUs × requested wall time, even when Kubernetes released it early. Peak concurrency was 16 GPUs for the initial pairs and 8 GPUs for the final pair, never exceeding the 16-GPU cluster limit. From the first launch at 2026-07-19 02:47:19 UTC to the final terminal state at 05:05:23 UTC, the experiment queue spanned **2.301211 actual wall-hours**, well inside the 12-hour paper limit.
 
 ## What is evidence, and what is not
 
