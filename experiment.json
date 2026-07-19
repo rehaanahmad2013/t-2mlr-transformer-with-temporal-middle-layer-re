@@ -1,0 +1,27 @@
+{
+  "variant": "baseline",
+  "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+  "openmath_revision": "d3d08664755704f422af97d43a7ff0ded4bd95df",
+  "gsm8k_revision": "740312add88f781978c0658806c59bc2815b9866",
+  "math500_revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+  "train_examples": 4096,
+  "max_train_tokens": 768,
+  "per_device_batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 2e-5,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.03,
+  "seed": 260715178,
+  "max_new_tokens": 256,
+  "recurrence_start_layer": 5,
+  "recurrence_end_layer": 24,
+  "jacobi_forward_depth": 8,
+  "backward_depth": 1,
+  "latency_lengths": [128, 512, 1024],
+  "latency_repeats": 3,
+  "requested_gpus": 8,
+  "requested_wall_hours": 6,
+  "planned_aggregate_reserved_gpu_hours": 96
+}
+
