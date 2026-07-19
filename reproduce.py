@@ -185,7 +185,7 @@ def build_train_rows(tokenizer: Any) -> tuple[list[dict[str, torch.Tensor]], str
         split="cot",
         streaming=True,
         revision=CONFIG["openmath_revision"],
-    ).shuffle(seed=int(CONFIG["seed"]), buffer_size=10_000)
+    ).shuffle(seed=int(CONFIG["seed"]), buffer_size=1_024)
     rows: list[dict[str, torch.Tensor]] = []
     seen: set[str] = set()
     digest = hashlib.sha256()
@@ -228,15 +228,17 @@ def prepare_data(tokenizer: Any) -> tuple[list[dict[str, torch.Tensor]], list[di
         train_rows, fingerprint, inspected = build_train_rows(tokenizer)
         gsm = load_dataset("openai/gsm8k", "main", split="test", revision=CONFIG["gsm8k_revision"])
         math500 = load_dataset("HuggingFaceH4/MATH-500", split="test", revision=CONFIG["math500_revision"])
+        gsm_limit = int(CONFIG["gsm8k_eval_examples"])
+        math_limit = int(CONFIG["math500_eval_examples"])
         payload = {
             "train": train_rows,
-            "gsm8k": [{"problem": x["question"], "answer": x["answer"].split("####")[-1].strip()} for x in gsm],
-            "math500": [{"problem": x["problem"], "answer": x["answer"]} for x in math500],
+            "gsm8k": [{"problem": x["question"], "answer": x["answer"].split("####")[-1].strip()} for x in gsm.select(range(gsm_limit))],
+            "math500": [{"problem": x["problem"], "answer": x["answer"]} for x in math500.select(range(math_limit))],
             "fingerprint": fingerprint,
             "inspected": inspected,
         }
         torch.save(payload, cache)
-        log("data_ready", train_examples=len(train_rows), gsm8k_examples=len(gsm), math500_examples=len(math500),
+        log("data_ready", train_examples=len(train_rows), gsm8k_examples=gsm_limit, math500_examples=math_limit,
             selected_problem_sha256=fingerprint, stream_rows_inspected=inspected)
     dist.barrier()
     payload = torch.load(cache, weights_only=False)
@@ -447,8 +449,8 @@ def latency_and_memory(model: nn.Module) -> dict[str, Any]:
 
 
 def main() -> None:
-    dist.init_process_group("nccl")
     torch.cuda.set_device(LOCAL_RANK)
+    dist.init_process_group("nccl", device_id=DEVICE)
     seed_everything(int(CONFIG["seed"]))
     job_started = time.perf_counter()
     gpu_name = torch.cuda.get_device_name(DEVICE)

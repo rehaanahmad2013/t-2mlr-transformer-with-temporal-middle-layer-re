@@ -14,13 +14,13 @@ spec:
           command: ["bash", "-c", "eval \"$ORX_SCRIPT\""]
           resources:
             requests:
-              nvidia.com/gpu: "8"
-              cpu: "64"
-              memory: 400Gi
+              nvidia.com/gpu: "4"
+              cpu: "32"
+              memory: 200Gi
             limits:
-              nvidia.com/gpu: "8"
-              cpu: "120"
-              memory: 900Gi
+              nvidia.com/gpu: "4"
+              cpu: "60"
+              memory: 450Gi
           volumeMounts:
             - name: dshm
               mountPath: /dev/shm
