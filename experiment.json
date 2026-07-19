@@ -21,6 +21,6 @@
   "latency_lengths": [128, 512, 1024],
   "latency_repeats": 3,
   "requested_gpus": 8,
-  "requested_wall_hours": 6,
-  "planned_aggregate_reserved_gpu_hours": 96
+  "requested_wall_hours": 5,
+  "planned_aggregate_reserved_gpu_hours": 176
 }
