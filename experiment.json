@@ -1,5 +1,5 @@
 {
-  "variant": "baseline",
+  "variant": "t2mlr",
   "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
   "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
   "openmath_revision": "d3d08664755704f422af97d43a7ff0ded4bd95df",
@@ -24,4 +24,3 @@
   "requested_wall_hours": 6,
   "planned_aggregate_reserved_gpu_hours": 96
 }
-
